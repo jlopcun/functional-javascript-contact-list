@@ -1,0 +1,129 @@
+// CUSTOM PROPERTIES
+:root
+    --BlackBgColor: #333
+    --White: #fff
+    --Grey: #ddd
+    --mobileFontSize:1.2rem
+    --tabletFontSize:1.5rem
+    --desktopFontSize:1.7rem
+    --iconFontSize:1.5rem
+    
+//RESET
+
+*,*::after,*::before
+    box-sizing: border-box
+    font-family: sans-serif
+
+body,html
+    position: relative
+    width:100%
+
+body
+    min-height:100vh
+    margin:0
+    font-size: var(--mobileFontSize)
+button
+    border: none
+    background-color: transparent
+
+
+// UTILITY CLASSES
+@mixin flex($direction,$wrap,$justify,$align)
+    display: flex
+    flex-flow: $direction $wrap
+    justify-content: $justify
+    align-items: $align
+.grid
+    display: grid
+.centered
+    display: flex
+    justify-content: center
+    align-items: center
+
+
+
+// PAGE HEADER STYLES
+
+.header
+    @include  flex(column,wrap,center,flex-end)
+    width:100%
+    margin-top:2rem
+    padding-bottom:.5rem
+    
+.header__title
+    width:100%
+    text-align: center
+.header__addBtn
+    width:2.5rem
+    height:2.5rem
+    margin-right:2rem
+    padding:.5rem
+    border-radius:50%
+    font-size: var(--iconFontSize)
+    background-color: var(--BlackBgColor)
+    color: var(--White)
+   
+
+// PAGE MAIN STYLES
+.main
+    display: grid
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,18rem),1fr))
+    justify-items: center
+    gap:2rem
+    width:100%
+    margin:2rem 0
+    padding:2rem
+.main__contact
+    @include flex(row,wrap,space-around,center)
+    gap:2rem
+    width: 100%
+    padding:1rem
+    border-radius:10px
+    background-color: var(--BlackBgColor)
+    color: var(--White)
+
+.main__contact__wrapper
+    @include flex(row,wrap,space-evenly,center)
+    width:50%
+    
+
+.main__contact__wrapper__img
+    width:3rem
+    height:3rem
+    border-radius:50%
+    overflow: hidden
+    background-color: var(--Grey)
+
+// .main__contact__wrapper__name
+
+.main__contact__callBtn
+    color: var(--White)
+    width:2rem
+    height:2rem
+.main__contact__callBtn__img
+    width:100%
+    height: 100%
+    filter: invert(1)
+
+// Tablet media query
+@media screen and (min-width:760px)
+    body
+        font-size: var(--tabletFontSize)
+    .header__addBtn
+        width:3rem
+        height:3rem
+        font-size: calc(var(--iconFontSize) * 1.5)
+    .main
+        gap:5rem
+    .main__contact
+        flex-direction: column
+    .main__contact__wrapper
+        flex-direction: column
+    .main__contact__wrapper__img
+        width:7rem
+        height:7rem
+    .main__contact__callBtn
+        width:4rem
+        height:4rem
+// Desktop media query
+@media screen and (min-width:980px)

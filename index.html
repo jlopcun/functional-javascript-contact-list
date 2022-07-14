@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="jlopcuns">
+    <meta name="description" content="a simple interactive contact list made by jlopcuns">
+    <meta name="keywords" content="contact list jlopcuns frontend html css javascript sass">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Contact list</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title"><span class="header__title__number">0</span> Contacts</h1>
+        <button class="header__addBtn centered"><span class="centered">+</span></button>
+    </header>
+    <main class="main" id="main">
+        
+
+    </main>
+
+    <template id="contactElementTemplate">
+        <article class="main__contact">
+            <div class="main__contact__wrapper">
+                <img class="main__contact__wrapper__img" id="contactImage" alt="contact profile photo">
+                <p class="main__contact__wrapper__name" id="contactName" tabindex="0"></p>
+            </div>
+            <button class="main__contact__callBtn"><img class="main__contact__callBtn__img" alt="call" src="assets/telephone-handle-silhouette.png"></button>
+        </article>
+    </template>
+    <script src="//cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js"></script>
+    <script src="public/scripts/helpers.js"></script>
+    <script src="public/scripts/main.js"></script>
+</body>
+</html>
